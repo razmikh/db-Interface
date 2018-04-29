@@ -17,6 +17,10 @@ module.exports = {
                     type: Sequelize.STRING(50),
                     allowNull: false,
                 },
+                pposition: {
+                    type: Sequelize.STRING(50),
+                    allowNull: false,
+                },
                 bid: {
                     type: Sequelize.INTEGER,
                     foreignKey: true,
@@ -56,6 +60,13 @@ module.exports = {
                 'players', ['pnumber'], {
                     type: 'UNIQUE',
                     name: 'pnumber_index'
+                }
+            )
+        }).then(() =>{
+            return queryInterface.addIndex(
+                'players', ['pname'], {
+                    type: 'UNIQUE',
+                    name: 'pname_index'
                 }
             )
         })
