@@ -57,15 +57,15 @@ module.exports = {
             )
         }).then(() =>{
             return queryInterface.addIndex(
-                'players', ['pnumber'], {
+                'players', ['pid'], {
                     type: 'UNIQUE',
-                    name: 'pnumber_index'
+                    name: 'pid_index'
                 }
             )
         }).then(() =>{
             return queryInterface.addIndex(
                 'players', ['pname'], {
-                    type: 'UNIQUE',
+                    type: 'FULLTEXT',
                     name: 'pname_index'
                 }
             )
