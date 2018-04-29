@@ -51,6 +51,13 @@ module.exports = {
                     }
                 }
             )
+        }).then(() =>{
+            return queryInterface.addIndex(
+                'players', ['pnumber'], {
+                    type: 'UNIQUE',
+                    name: 'pnumber_index'
+                }
+            )
         })
         /*
           Add altering commands here.
