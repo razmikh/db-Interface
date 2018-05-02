@@ -10,23 +10,26 @@
     "db:rollback:all": "sequelize db:migrate:undo:all",
     "postinstall": "sequelize db:migrate"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/razmikh/db-Interface.git"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "connect-flash": "*",
     "debug": "~2.6.9",
     "dotenv": "^5.0.1",
     "express": "~4.15.5",
     "express-handlebars": "*",
     "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
     "morgan": "~1.9.0",
     "pg-promise": "^8.2.2",
     "serve-favicon": "~2.4.5",
     "sequelize": "*",
-    "sequelize-cli":"*"
+    "sequelize-cli": "*"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"

@@ -1,5 +1,57 @@
 <html>
-<body>
-    {{data}}
+<body class="text-center" onLoad="buildHtmlTable('#query-table')">
+    {{#if errors}}
+        {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+    <form class="form-group-search" method="post" action="/:query">
+        <h1 class="h3 mb-3 font-weight-normal">Input a Query</h1>
+        <label for="inputQuery" class="sr-only">Query</label>
+        <textarea type="text" id="inputQuery" class="form-control"
+                  placeholder="Query" name="query"></textarea>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+        <table id="query-table">
+        </table>
+    <script>
+        let jsonList = {{{getStringJSON query}}};
+        let parsed = JSON.parse(jsonList);
+
+        const buildHtmlTable = (selector)=> {
+            let columns = addAllColumns(parsed, selector);
+
+            for (let i = 0; i < parsed.length; i++) {
+                let row$ = $('<tr/>');
+                for (let colIndex = 0; colIndex < columns.length; colIndex++) {
+                    let cellValue = parsed[i][columns[colIndex]];
+                    if (cellValue == null) cellValue = "";
+                    row$.append($('<td/>').html(cellValue));
+                }
+                $(selector).append(row$);
+            }
+        }
+
+        // Adds a header row to the table and returns the set of columns.
+        // Need to do union of keys from all records as some records may not contain
+        // all records.
+        const addAllColumns = (parsed, selector) => {
+            let columnSet = [];
+            let headerTr$ = $('<tr/>');
+
+            for (let i = 0; i < parsed.length; i++) {
+                let rowHash = parsed[i];
+                for (let key in rowHash) {
+                    if ($.inArray(key, columnSet) == -1) {
+                        columnSet.push(key);
+                        headerTr$.append($('<th/>').html(key));
+                    }
+                }
+            }
+            $(selector).append(headerTr$);
+
+            return columnSet;
+        }
+    </script>
 </body>
 </html>
