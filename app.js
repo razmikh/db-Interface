@@ -1,12 +1,12 @@
 require("dotenv").config();
 
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const express = require('express');
 const expressHb = require('express-handlebars');
 const expressValidator = require('express-validator');
 const session = require('express-session');
 const logger = require('morgan');
-const cookieParser = require('cookie-parser');;
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const favicon = require('serve-favicon');
 const flash = require('connect-flash');

@@ -21,7 +21,6 @@ router.post("/:query", (request, response) => {
         });
     else{
         db.any(query).then(data => {
-            console.log('Data' + JSON.stringify(data));
             request.flash('success_msg', 'Successful query');
             response.redirect('/'+ JSON.stringify(data));
 
