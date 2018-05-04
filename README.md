@@ -16,6 +16,7 @@ A simple database interface that handles SQL queries
    
    You need to have Nodejs and PostgreSQL installed to run this application
    
+---------------------------------------------------------------------   
 #### Enviornment
 Start off by making a .env file:
 
@@ -49,7 +50,7 @@ Once this is done now it is time to get our dependencies by running:
 To run the app run:
 
         npm run start
-##Database Scripts
+## Database Scripts
 
 * Create all the tables onto the database:
       
@@ -69,7 +70,7 @@ To run the app run:
 
        localhost:5000
 
-
+---------------------------------
 
 ##### Csc 675 Database Project Interface
    
