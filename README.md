@@ -1,9 +1,9 @@
-#DB Simple Interface
+# DB Simple Interface
 
 ----------------------------------------------------------
 A simple database interface that handles SQL queries
 
-##Built With
+## Built With
 
 
    [Node.js](https://nodejs.org/en/)
@@ -71,7 +71,7 @@ To run the app run:
 
 
 
-#####Csc 675 Database Project Interface
+##### Csc 675 Database Project Interface
    
    * Razmik Hakobyan
    * Oscar Alaniz
