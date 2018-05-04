@@ -1,7 +1,10 @@
-# DB Simple Interface
-----------------------------------------------------------
+#DB Simple Interface
 
-This is a simple database interface using:
+----------------------------------------------------------
+A simple database interface that handles SQL queries
+
+##Built With
+
 
    [Node.js](https://nodejs.org/en/)
    
@@ -11,7 +14,6 @@ This is a simple database interface using:
    
    [PostgreSQL](https://www.postgresql.org/)
    
------------------------------------------------------------------
    You need to have Nodejs and PostgreSQL installed to run this application
    
 #### Enviornment
@@ -47,4 +49,29 @@ Once this is done now it is time to get our dependencies by running:
 To run the app run:
 
         npm run start
-##### The app defaults to localhost:5000
+##Database Scripts
+
+* Create all the tables onto the database:
+      
+     Note: this script is ran after the dependencies are installed
+             
+        npm run db:migrate
+        
+ * Drop the most recently made table on the database
+ 
+        npm run db:rollback
+        
+* Drop all tables in the database
+
+        npm run db:rollback:all
+
+##### The app defaults to: 
+
+       localhost:5000
+
+
+
+#####Csc 675 Database Project Interface
+   
+   * Razmik Hakobyan
+   * Oscar Alaniz
