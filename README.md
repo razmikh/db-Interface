@@ -1,10 +1,9 @@
 # DB Simple Interface
-
-
-Link to sample site using Heroku : [Soccer Database](https://spring18-csc675soccerdb.herokuapp.com/)
-
 ----------------------------------------------------------
 A simple database interface that handles SQL queries
+This is only a demo that allows SQL statements to be passed to a given database. 
+
+DO NOT REPLICATE THIS AS IT IS OPEN TO SQL INJECTIONS
 
 ## Built With
 
